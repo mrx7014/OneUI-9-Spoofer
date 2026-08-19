@@ -31,18 +31,9 @@ jobs:
         gradle-version: '8.9'  # <--- Add this line
 
 
-    # Safely injects your persistent identity key into the compiler tree
-    - name: Prepare Keystore
-      run: |
-        echo "${{ secrets.SIGNING_KEY }}" | base64 -d --ignore-garbage > app/debug.keystore
-
-
     - name: Compile Debug APK
       run: gradle assembleDebug
-      env:
-        RELEASE_SIGNING_PASSWORD: android
-        RELEASE_SIGNING_KEY_ALIAS: androiddebugkey
-        RELEASE_SIGNING_KEY_PASSWORD: android
+    
 
     - name: Copy APK to Debug Folder and Push
       run: |
