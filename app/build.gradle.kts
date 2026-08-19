@@ -6,7 +6,6 @@ plugins {
 android {
     namespace = "com.HeheJuice.OneUINineSpoof"
     compileSdk = 36
-    compileSdkVersion(36) 
 
     defaultConfig {
         applicationId = "com.HeheJuice.OneUINineSpoof"
@@ -16,20 +15,7 @@ android {
         versionName = "1.0"
     }
 
-    signingConfigs {
-        create("stableDebug") {
-            storeFile = file("debug.keystore")
-            storePassword = System.getenv("RELEASE_SIGNING_PASSWORD") ?: "android"
-            keyAlias = System.getenv("RELEASE_SIGNING_KEY_ALIAS") ?: "androiddebugkey"
-            keyPassword = System.getenv("RELEASE_SIGNING_KEY_PASSWORD") ?: "android"
-        }
-    }
-
-    // Both environments grouped together cleanly inside ONE block
     buildTypes {
-        debug {
-            signingConfig = signingConfigs.getByName("stableDebug")
-        }
         release {
             isMinifyEnabled = false
             proguardFiles(
