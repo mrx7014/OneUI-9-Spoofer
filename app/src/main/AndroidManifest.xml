@@ -5,7 +5,7 @@
         android:allowBackup="false"
         package="com.HeheJuice.OneUINineSpoof"
         android:icon="@drawable/ic_hehe"
-        android:label="OneUI 9 Prop Spoofer">
+        android:label="OneUI 8 Prop Spoofer">
         
         <meta-data
             android:name="xposedmodule"
@@ -13,7 +13,7 @@
             
         <meta-data
             android:name="xposeddescription"
-            android:value="Spoofing as OneUI 9 For Selected Apps." />
+            android:value="Spoofing as OneUI 8 For Selected Apps." />
             
         <meta-data
             android:name="xposedminversion"
